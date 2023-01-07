@@ -43,9 +43,10 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form action="employee-add.php" method="POST">
+                <form action="employee-update.php" method="POST">
                   <div class="card-body" style="height: 85vh; overflow: scroll;">
 
+                    <input type="text" style="display:none" name="id" value="<?php echo $row['id']?>" required >
                     <legend>Personal information</legend>
                     <div class="row">
                       
