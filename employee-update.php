@@ -60,6 +60,6 @@
     echo "<br>";
     $res  = $conn->query($sql);
     if($res)
-       header("location: employees.php");
+        header("location: employee-profile.php?id=$id");
     else    
         echo "error happened";

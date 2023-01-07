@@ -34,61 +34,44 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form action="employee-add.php" method="POST">
-                  <div class="card-body" style="height: 85vh; overflow: scroll;">
+                <form action="employee-educattain-add.php" method="POST">
+                  <div class="card-body" style="">
+
+                    <input type="text" style="display:none" name="empID" value="<?php echo $_GET['id']?>" required >
 
                     <!-- <legend>Personal information</legend> -->
                     <div class="row">
-                      
-                    <div class="col-4">
+                      <div class="col-12">
                         <div class="form-group">
                           <!-- <label for="exampleInputEmail1">First Name</label> -->
-                          <input type="text" class="form-control" id="" placeholder="First name" required name="firstname">
-                        </div>
-                      </div>
-
-                      <div class="col-4">
-                        <div class="form-group">
-                            <!-- <label for="exampleInputEmail1">First Name</label> -->
-                            <input type="text" class="form-control" id="" placeholder="Middle name" name="middlename" required>
-                        </div>
-                      </div>
-                    
-                      <div class="col-4">
-                        <div class="form-group">
-                            <!-- <label for="exampleInputEmail1">First Name</label> -->
-                            <input type="text" class="form-control" id="" placeholder="Last name" name="lastname" required>
+                          <input type="text" class="form-control" id="" placeholder="Type of degree" required name="typeDegree">
                         </div>
                       </div>
                     
                     </div>
 
+                    
 
                     <div class="row">
-                      <div class="col-6">
+                      <div class="col-12">
                         <div class="form-group">
-                          <!-- <label for="exampleInputEmail1">First Name</label> -->
-                          <input type="number" class="form-control" id="" placeholder="Age" name="age" required>
+                            <!-- <label for="exampleInputEmail1">First Name</label> -->
+                            <input type="date" class="form-control" id="" placeholder="Date Finished" name="dateFinished" required>
                         </div>
                       </div>
-
-                      <div class="col-6">
-                        <div class="form-group">
-                           <select class="form-control" name="gender" required>
-                            <option value="Male" >Male</option>
-                            <option value="Female" >Female</option>
-                          </select>
-                        </div>
-                       
-                      </div>
+                    </div>
                     
-                     
+
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="form-group">
+                            <!-- <label for="exampleInputEmail1">First Name</label> -->
+                            <input type="text" class="form-control" id="" placeholder="School attended" name="schoolAttended" required>
+                        </div>
+                      </div>
                     
                     </div>
 
-                    
-
-                    
                   <!-- /.card-body -->
 
                   <div class="card-footer">

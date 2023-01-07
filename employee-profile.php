@@ -44,6 +44,7 @@
                     $res = $conn->query($sqlQuery);
                 
                     $row = $res->fetch_object();
+                    $idNum = $row->idnum
                 ?>
 
                 <h3 class="profile-username text-center"><?php echo $row->firstname." ".$row->lastname;?></h3>
@@ -84,7 +85,7 @@
                 <div class="card-body">
                     <h5>Educational attainments</h5>
                     <hr>
-                    <a href="employee-educattain.php?id=3" class="btn btn-primary">Add Educational Attainment</a>
+                    <a href="employee-educattain-add-form.php?id=<?php echo $empID;?>&idnum=<?php echo $idNum;?>" class="btn btn-primary">Add Educational Attainment</a>
                     <!-- /.tab-content -->
               </div>
             </div>
