@@ -4,6 +4,19 @@
     }
     
     include_once "~/../php-includes/header.php";
+
+    require_once "dbconnection.php";
+    $eaid = $_GET['id'];
+
+    // var_dump($catID);
+    $sqlQuery = "SELECT * from educAttain WHERE id = $eaid limit 1";
+    
+    $res = $conn->query($sqlQuery);
+
+    $row = $res->fetch_assoc();
+    
+    // var_dump($row)
+
 ?>
 
 
@@ -13,7 +26,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Add Educational Attainment</h1>
+            <h1 class="m-0">Update Educational Attainment</h1>
           </div><!-- /.col -->
           
         </div><!-- /.row -->
@@ -34,17 +47,18 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form action="employee-educattain-add.php" method="POST">
+                <form action="employee-educattain-update.php" method="POST">
                   <div class="card-body" style="">
 
-                    <input type="text" style="display:none" name="empID" value="<?php echo $_GET['id']?>" required >
+                  <input type="text" style="display:none" name="id" value="<?php echo $row['id']?>" required >
+                  <input type="text" style="display:none" name="empid" value="<?php echo $row['empID']?>" required >
 
                     <!-- <legend>Personal information</legend> -->
                     <div class="row">
                       <div class="col-12">
                         <div class="form-group">
                           <!-- <label for="exampleInputEmail1">First Name</label> -->
-                          <input type="text" class="form-control" id="" placeholder="Type of degree" required name="typeDegree">
+                          <input type="text" value="<?php echo $row['typeDegree']?>" class="form-control" id="" placeholder="Type of degree" required name="typeDegree">
                         </div>
                       </div>
                     
@@ -56,7 +70,7 @@
                       <div class="col-12">
                         <div class="form-group">
                             <!-- <label for="exampleInputEmail1">First Name</label> -->
-                            <input type="date" class="form-control" id="" placeholder="Date Finished" name="dateFinished" required>
+                            <input type="date" value="<?php echo $row['dateFinished']?>"  class="form-control" id="" placeholder="Date Finished" name="dateFinished" required>
                         </div>
                       </div>
                     </div>
@@ -66,7 +80,7 @@
                       <div class="col-12">
                         <div class="form-group">
                             <!-- <label for="exampleInputEmail1">First Name</label> -->
-                            <input type="text" class="form-control" id="" placeholder="School attended" name="schoolAttended" required>
+                            <input type="text" value="<?php echo $row['schoolAttended']?>"  class="form-control" id="" placeholder="School attended" name="schoolAttended" required>
                         </div>
                       </div>
                     
@@ -76,7 +90,8 @@
 
                   <div class="card-footer">
                     <button type="submit" class="btn btn-primary">Submit</button>
-                    <a href="employee-profile.php?id=<?php echo $_GET['id'];?>" class="btn btn-danger">Back</a>
+                    <a href="employee-profile.php?id=<?php echo $_GET['empid'];?>" class="btn btn-danger">Back</a>
+
                   </div>
                 </form>
               </div>

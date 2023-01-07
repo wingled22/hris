@@ -72,11 +72,8 @@
                 <a href="employee-view-form.php?id=<?php echo $_GET['id']?>" class="btn btn-primary btn-block"><b>View Information</b></a>
                 <a href="employee-update-form.php?id=<?php echo $_GET['id']?>" class="btn btn-primary btn-block"><b>Update Information</b></a>
               </div>
-              
-              
-              <!-- /.card-body -->
+
             </div>
-            <!-- /.card -->
 
           </div>
          
@@ -86,9 +83,69 @@
                     <h5>Educational attainments</h5>
                     <hr>
                     <a href="employee-educattain-add-form.php?id=<?php echo $empID;?>&idnum=<?php echo $idNum;?>" class="btn btn-primary">Add Educational Attainment</a>
-                    <!-- /.tab-content -->
+                    <br>
+                    <table class="table table-striped table-valign-middle">
+                      <thead>
+
+                        <tr>
+                          <th>Type of degree</th>
+                          <th>School Attended</th>
+                          <th>Date finished</th>
+                          <th>More</th>
+                        </tr>
+
+                      </thead>
+
+                      <tbody>
+
+                      <?php
+                          require "dbconnection.php";
+                          $sql = "SELECT * from educattain where empID = $empID";
+                          $res = $conn->query($sql);
+
+                          if(!$res)
+                              echo "no data on the the book table";
+
+
+                          while($row =mysqli_fetch_object($res)){
+                      ?>
+
+                        <tr>
+                          <td><?php echo $row->typeDegree; ?></td>
+                          <td><?php echo $row->dateFinished ?></td>
+                          <td><?php echo $row->schoolAttended; ?></td>
+                          <td>
+                            <a href="employee-educattain-update-form.php?empid=<?php echo $_GET['id']?>&id=<?php echo $row->id?>" class="btn btn-success">Update</a>
+                            <a href="employee-educattain-delete.php?empid=<?php echo $_GET['id']?>&id=<?php echo $row->id?>" class="btn btn-danger">Delete</a>
+                          </td>
+                        </tr>
+                    
+                      <?php
+                          }    
+                      ?>
+                      </tbody>
+                    </table>
               </div>
             </div>
+
+            <div class="card">
+              <div class="card-body">
+                  <h5>Certifications</h5>
+                  <hr>
+                  <a href="employee-certification-add-form.php?id=<?php echo $empID;?>&idnum=<?php echo $idNum;?>" class="btn btn-primary">Add Certification</a>
+                  <br>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-body">
+                  <h5>Offenses</h5>
+                  <hr>
+                  <a href="employee-offense-add-form.php?id=<?php echo $empID;?>&idnum=<?php echo $idNum;?>" class="btn btn-primary">Add Offense</a>
+                  <br>
+              </div>
+            </div>
+                
           </div>
 
 
