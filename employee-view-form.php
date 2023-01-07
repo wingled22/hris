@@ -22,7 +22,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Update Employee</h1>
+            <h1 class="m-0">View Employee</h1>
           </div><!-- /.col -->
           
         </div><!-- /.row -->
@@ -46,28 +46,28 @@
                 <form action="employee-update.php" method="POST">
                   <div class="card-body" style="height: 85vh; overflow: scroll;">
 
-                    <input type="text" style="display:none" name="id" value="<?php echo $row['id']?>" required >
+                    <input disabled type="text" style="display:none" name="id" value="<?php echo $row['id']?>" required >
                     <legend>Personal information</legend>
                     <div class="row">
                       
                     <div class="col-4">
                         <div class="form-group">
                           <!-- <label for="exampleInputEmail1">First Name</label> -->
-                          <input type="text" class="form-control" id="" placeholder="First name" required name="firstname" value="<?php echo $row['firstname']?>" >
+                          <input disabled type="text" class="form-control" id="" placeholder="First name" required name="firstname" value="<?php echo $row['firstname']?>" >
                         </div>
                       </div>
 
                       <div class="col-4">
                         <div class="form-group">
                             <!-- <label for="exampleInputEmail1">First Name</label> -->
-                            <input type="text" class="form-control" id="" placeholder="Middle name" name="middlename" value="<?php echo $row['middlename']?>" required>
+                            <input disabled type="text" class="form-control" id="" placeholder="Middle name" name="middlename" value="<?php echo $row['middlename']?>" required>
                         </div>
                       </div>
                     
                       <div class="col-4">
                         <div class="form-group">
                             <!-- <label for="exampleInputEmail1">First Name</label> -->
-                            <input type="text" class="form-control" id="" placeholder="Last name" name="lastname" value="<?php echo $row['lastname']?>" required>
+                            <input disabled type="text" class="form-control" id="" placeholder="Last name" name="lastname" value="<?php echo $row['lastname']?>" required>
                         </div>
                       </div>
                     
@@ -78,13 +78,13 @@
                       <div class="col-6">
                         <div class="form-group">
                           <!-- <label for="exampleInputEmail1">First Name</label> -->
-                          <input type="number" class="form-control" id="" placeholder="Age" name="age" value="<?php echo $row['age']?>" required>
+                          <input disabled type="number" class="form-control" id="" placeholder="Age" name="age" value="<?php echo $row['age']?>" required>
                         </div>
                       </div>
 
                       <div class="col-6">
                         <div class="form-group">
-                           <select class="form-control" name="gender" value="<?php echo $row['gender']?>" required>
+                           <select disabled class="form-control" name="gender" value="<?php echo $row['gender']?>" required>
                             <option value="Male" >Male</option>
                             <option value="Female" >Female</option>
                           </select>
@@ -102,21 +102,21 @@
                       <div class="col-4">
                         <div class="form-group">
                           <!-- <label for="exampleInputEmail1">First Name</label> -->
-                          <input type="text" class="form-control" id="" placeholder="Civil Status" name="civilstat" value="<?php echo $row['civilstat']?>" required>
+                          <input disabled type="text" class="form-control" id="" placeholder="Civil Status" name="civilstat" value="<?php echo $row['civilstat']?>" required>
                         </div>
                       </div>
 
                       <div class="col-4">
                         <div class="form-group">
                           <!-- <label for="exampleInputEmail1">First Name</label> -->
-                          <input type="text" class="form-control" id="" placeholder="Citizenship" name="citizenship" value="<?php echo $row['citizenship']?>" required>
+                          <input disabled type="text" class="form-control" id="" placeholder="Citizenship" name="citizenship" value="<?php echo $row['citizenship']?>" required>
                         </div>
                       </div>
                     
                       <div class="col-4">
                         <div class="form-group">
                             <!-- <label for="exampleInputEmail1">First Name</label> -->
-                            <input type="text" class="form-control" id="" placeholder="Religion" name="religion" value="<?php echo $row['religion']?>" required>
+                            <input disabled type="text" class="form-control" id="" placeholder="Religion" name="religion" value="<?php echo $row['religion']?>" required>
                         </div>
                       </div>
                     
@@ -128,13 +128,13 @@
                       <div class="col-6">
                           <div class="form-group">
                               <!-- <label for="exampleInputEmail1">First Name</label> -->
-                              <input type="text" class="form-control" id="" placeholder="Contact" name="contact" value="<?php echo $row['contact']?>" required>
+                              <input disabled type="text" class="form-control" id="" placeholder="Contact" name="contact" value="<?php echo $row['contact']?>" required>
                           </div>
                       </div>
                       <div class="col-6">
                           <div class="form-group">
                               <!-- <label for="exampleInputEmail1">First Name</label> -->
-                              <input type="Email" class="form-control" id="" placeholder="Email" name="email" value="<?php echo $row['email']?>" required>
+                              <input disabled type="Email" class="form-control" id="" placeholder="Email" name="email" value="<?php echo $row['email']?>" required>
                           </div>
                       </div>
                       
@@ -144,7 +144,7 @@
                       <div class="col-12">
                           <div class="form-group">
                               <!-- <label for="exampleInputEmail1">First Name</label> -->
-                              <input type="text" class="form-control" id="" placeholder="Adrress" name="address" value="<?php echo $row['address']?>" required>
+                              <input disabled type="text" class="form-control" id="" placeholder="Adrress" name="address" value="<?php echo $row['address']?>" required>
                           </div>
                       </div>
                     </div>
@@ -154,14 +154,14 @@
                       <div class="col-6">
                         <div class="form-group">
                           <!-- <label for="exampleInputEmail1">First Name</label> -->
-                          <input type="text" class="form-control" id="" placeholder="Place of Birth" name="birthplace" value="<?php echo $row['birthplace']?>" required>
+                          <input disabled type="text" class="form-control" id="" placeholder="Place of Birth" name="birthplace" value="<?php echo $row['birthplace']?>" required>
                         </div>
                       </div>
 
                       <div class="col-6">
                         <div class="form-group">
                             <!-- <label for="exampleInputEmail1">First Name</label> -->
-                            <input type="date" class="form-control" id="" placeholder="Date of birth" name="birthdate" value="<?php echo $row['birthdate']?>" required>
+                            <input disabled type="date" class="form-control" id="" placeholder="Date of birth" name="birthdate" value="<?php echo $row['birthdate']?>" required>
                         </div>
                       </div>
                     
@@ -171,14 +171,14 @@
                       <div class="col-6">
                         <div class="form-group">
                           <!-- <label for="exampleInputEmail1">First Name</label> -->
-                          <input type="text" class="form-control" id="" placeholder="Father's name" name="fathername" value="<?php echo $row['fathername']?>" required>
+                          <input disabled type="text" class="form-control" id="" placeholder="Father's name" name="fathername" value="<?php echo $row['fathername']?>" required>
                         </div>
                       </div>
 
                       <div class="col-6">
                         <div class="form-group">
                           <!-- <label for="exampleInputEmail1">First Name</label> -->
-                          <input type="text" class="form-control" id="" placeholder="Mother's name" name="mothername" value="<?php echo $row['mothername']?>" required>
+                          <input disabled type="text" class="form-control" id="" placeholder="Mother's name" name="mothername" value="<?php echo $row['mothername']?>" required>
                         </div>
                       </div>
                     
@@ -190,7 +190,7 @@
                      <div class="col-12">
                        <div class="form-group">
                          <!-- <label for="exampleInputEmail1">First Name</label> -->
-                         <input type="text" class="form-control" id="" placeholder="ID Number" name="idnum" value="<?php echo $row['idnum']?>" required>
+                         <input disabled type="text" class="form-control" id="" placeholder="ID Number" name="idnum" value="<?php echo $row['idnum']?>" required>
                        </div>
                      </div>
                    
@@ -200,14 +200,14 @@
                       <div class="col-6">
                         <div class="form-group">
                           <!-- <label for="exampleInputEmail1">First Name</label> -->
-                          <input type="date" class="form-control" id="" placeholder="Hired date" name="hireddate" value="<?php echo $row['hireddate']?>" required>
+                          <input disabled type="date" class="form-control" id="" placeholder="Hired date" name="hireddate" value="<?php echo $row['hireddate']?>" required>
                         </div>
                       </div>
 
                       <div class="col-6">
                         <div class="form-group">
                           <!-- <label for="exampleInputEmail1">First Name</label> -->
-                          <input type="text" class="form-control" id="" placeholder="Department" name="department" value="<?php echo $row['department']?>" required>
+                          <input disabled type="text" class="form-control" id="" placeholder="Department" name="department" value="<?php echo $row['department']?>" required>
                         </div>
                       </div>
                     
@@ -219,14 +219,14 @@
                       <div class="col-6">
                         <div class="form-group">
                           <!-- <label for="exampleInputEmail1">First Name</label> -->
-                          <input type="date" class="form-control" id="" placeholder="Name" name="emername" value="<?php echo $row['emername']?>" required>
+                          <input disabled type="date" class="form-control" id="" placeholder="Name" name="emername" value="<?php echo $row['emername']?>" required>
                         </div>
                       </div>
 
                       <div class="col-6">
                         <div class="form-group">
                           <!-- <label for="exampleInputEmail1">First Name</label> -->
-                          <input type="text" class="form-control" id="" placeholder="Contact #" name="emercontact" value="<?php echo $row['emercontact']?>" required>
+                          <input disabled type="text" class="form-control" id="" placeholder="Contact #" name="emercontact" value="<?php echo $row['emercontact']?>" required>
                         </div>
                       </div>
 
@@ -238,14 +238,14 @@
                       <div class="col-6">
                         <div class="form-group">
                           <!-- <label for="exampleInputEmail1">First Name</label> -->
-                          <input type="text" class="form-control" id="" placeholder="Relationship" name="emerrelation" value="<?php echo $row['emerrelation']?>" required>
+                          <input disabled type="text" class="form-control" id="" placeholder="Relationship" name="emerrelation" value="<?php echo $row['emerrelation']?>" required>
                         </div>
                       </div>
 
                       <div class="col-6">
                         <div class="form-group">
                           <!-- <label for="exampleInputEmail1">First Name</label> -->
-                          <input type="text" class="form-control" id="" placeholder="Address" name="emeraddress" value="<?php echo $row['emeraddress']?>" required>
+                          <input disabled type="text" class="form-control" id="" placeholder="Address" name="emeraddress" value="<?php echo $row['emeraddress']?>" required>
                         </div>
                       </div>
                     </div>
@@ -255,8 +255,7 @@
                   <!-- /.card-body -->
 
                   <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                    <button type="cancel" class="btn btn-danger">Back</button>
+                    <a href="employee-profile.php?id=<?php echo $_GET['id'];?>" class="btn btn-primary">Back</a>
                   </div>
                 </form>
               </div>

@@ -1,3 +1,8 @@
+alter table educattain add empID varchar(255);
+alter table educattain add typeDegree varchar(255);
+alter table educattain add dateFinished varchar(255);
+alter table educattain add schoolAttended varchar(500);
+==========================================================
 alter table employee add firstname varchar(255);
 alter table employee add middlename varchar(255);
 alter table employee add lastname varchar(255);
