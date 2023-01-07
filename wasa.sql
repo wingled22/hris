@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 07, 2023 at 10:17 AM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- Generation Time: Jan 07, 2023 at 04:26 PM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 7.3.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,27 @@ SET time_zone = "+00:00";
 --
 -- Database: `wasa`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `educattain`
+--
+
+CREATE TABLE `educattain` (
+  `id` int(11) NOT NULL,
+  `empID` varchar(255) DEFAULT NULL,
+  `typeDegree` varchar(255) DEFAULT NULL,
+  `dateFinished` varchar(255) DEFAULT NULL,
+  `schoolAttended` varchar(500) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `educattain`
+--
+
+INSERT INTO `educattain` (`id`, `empID`, `typeDegree`, `dateFinished`, `schoolAttended`) VALUES
+(7, '1', 'master of jamesqweqwe', '2020-02-04', 'cr ml qweqwe');
 
 -- --------------------------------------------------------
 
@@ -58,7 +79,7 @@ CREATE TABLE `employee` (
 --
 
 INSERT INTO `employee` (`id`, `firstname`, `middlename`, `lastname`, `age`, `gender`, `civilstat`, `citizenship`, `religion`, `contact`, `email`, `address`, `birthplace`, `birthdate`, `fathername`, `mothername`, `idnum`, `hireddate`, `department`, `emername`, `emercontact`, `emerrelation`, `emeraddress`) VALUES
-(1, 'Windel', 'Abuyot', 'Pela', '24', 'Female', 'qwe', 'qwe', 'qwe', 'qwe', 'pelayowindel@gmail.com', 'Brgy. Libertad Proper, Purok Portland, Libertad Proper', 'qwe', '2023-01-18', 'qwe', 'qwe', 'qweqwe', '2023-01-19', '12312weqwe', '2023-01-06', '213qwe', 'qweqweqwe', 'qweqweqwe'),
+(1, 'Wen', 'asdf ', '123', '24', 'Male', '11', '11', '11', 'qwe', 'qw@gmail.com', 'Proper', 'qwe', '2023-01-18', 'qwe', 'qwe', 'qweqwe', '2023-01-19', '12312weqwe', '2023-01-06', '213qwe', 'qweqweqwe', 'qweqweqwe'),
 (2, 'Windel', 'Abuyot', 'Pela', '24', 'Male', 'qwe', 'qwe', 'qwe', 'qwe', 'pelayowindel@gmail.com', 'Brgy. Libertad Proper, Purok Portland, Libertad Proper', 'qwe', '2023-01-18', 'qwe', 'qwe', 'qweqwe', '2023-01-19', '12312weqwe', '2023-01-06', '213qwe', 'qweqweqwe', 'qweqweqwe'),
 (3, 'Windel', 'Abuyot', 'Pela', '24', 'Male', 'qwe', 'qwe', 'qwe', 'qwe', 'pelayowindel@gmail.com', 'Brgy. Libertad Proper, Purok Portland, Libertad Proper', 'qwe', '2023-01-18', 'qwe', 'qwe', 'qweqwe', '2023-01-19', '12312weqwe', '2023-01-06', '213qwe', 'qweqweqwe', 'qweqweqwe');
 
@@ -86,6 +107,12 @@ INSERT INTO `login` (`id`, `username`, `password`) VALUES
 --
 
 --
+-- Indexes for table `educattain`
+--
+ALTER TABLE `educattain`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `employee`
 --
 ALTER TABLE `employee`
@@ -102,10 +129,16 @@ ALTER TABLE `login`
 --
 
 --
+-- AUTO_INCREMENT for table `educattain`
+--
+ALTER TABLE `educattain`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
 -- AUTO_INCREMENT for table `employee`
 --
 ALTER TABLE `employee`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `login`
