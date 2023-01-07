@@ -25,9 +25,9 @@
         <div class="row">
           <div class="col-md-9">
             <div class="card card-primary">
-                <div class="card-header">
+                <!-- <div class="card-header">
                   <h3 class="card-title">Employee Information</h3>
-                </div>
+                </div> -->
                 <!-- /.card-header -->
                 <!-- form start -->
                 <form action="employee-add.php" method="POST">
@@ -254,7 +254,7 @@
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content -->
-    
+
   </div>
   <!-- /.content-wrapper -->
 
