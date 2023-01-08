@@ -1,3 +1,8 @@
+alter table offense add empID int ;
+alter table offense add offenseType varchar(255);
+alter table offense add descr varchar(255);
+alter table offense add sanction varchar(255);
+==========================================================
 alter table certification add empID int ;
 alter table certification add certName varchar(255);
 alter table certification add dateStart varchar(255);

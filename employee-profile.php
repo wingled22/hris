@@ -190,6 +190,50 @@
                   <hr>
                   <a href="employee-offense-add-form.php?id=<?php echo $empID;?>&idnum=<?php echo $idNum;?>" class="btn btn-primary">Add Offense</a>
                   <br>
+
+                  <table class="table table-striped table-valign-middle">
+                      <thead>
+
+                        <tr>
+                          <th>Type of offense</th>
+                          <th>Description</th>
+                          <th>Sanction</th>
+                          <th>More</th>
+                        </tr>
+
+                      </thead>
+
+                      <tbody>
+
+                      <?php
+                          require "dbconnection.php";
+                          $sql = "SELECT * from offense where empID = $empID";
+                          $res = $conn->query($sql);
+
+                          if(!$res)
+                              echo "no data on the table";
+
+
+                          while($row =mysqli_fetch_object($res)){
+                      ?>
+
+                        <tr>
+                          <td><?php echo $row->offenseType; ?></td>
+                          <td><?php echo $row->descr ?></td>
+                          <td><?php echo $row->sanction ?></td>
+                          <td>
+                            <a href="employee-offense-update-form.php?empid=<?php echo $_GET['id']?>&id=<?php echo $row->id?>" class="btn btn-success">Update</a>
+                            <a href="employee-offense-delete.php?empid=<?php echo $_GET['id']?>&id=<?php echo $row->id?>" class="btn btn-danger">Delete</a>
+                          </td>
+                        </tr>
+                    
+                      <?php
+                          }    
+                      ?>
+                      </tbody>
+                    </table>
+
+
               </div>
             </div>
                 
