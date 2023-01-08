@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 07, 2023 at 04:26 PM
+-- Generation Time: Jan 08, 2023 at 03:28 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.3.27
 
@@ -24,12 +24,35 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `certification`
+--
+
+CREATE TABLE `certification` (
+  `id` int(11) NOT NULL,
+  `empID` int(11) DEFAULT NULL,
+  `certName` varchar(255) DEFAULT NULL,
+  `dateStart` varchar(255) DEFAULT NULL,
+  `dateEnd` varchar(255) DEFAULT NULL,
+  `qualification` varchar(500) DEFAULT NULL,
+  `venue` varchar(500) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `certification`
+--
+
+INSERT INTO `certification` (`id`, `empID`, `certName`, `dateStart`, `dateEnd`, `qualification`, `venue`) VALUES
+(5, 3, 'wasdf', '2023-01-01', '2023-02-04', ' saldkf ', 'venue 1 update1');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `educattain`
 --
 
 CREATE TABLE `educattain` (
   `id` int(11) NOT NULL,
-  `empID` varchar(255) DEFAULT NULL,
+  `empID` int(255) DEFAULT NULL,
   `typeDegree` varchar(255) DEFAULT NULL,
   `dateFinished` varchar(255) DEFAULT NULL,
   `schoolAttended` varchar(500) DEFAULT NULL
@@ -40,7 +63,8 @@ CREATE TABLE `educattain` (
 --
 
 INSERT INTO `educattain` (`id`, `empID`, `typeDegree`, `dateFinished`, `schoolAttended`) VALUES
-(7, '1', 'master of jamesqweqwe', '2020-02-04', 'cr ml qweqwe');
+(7, 1, 'master of jamesqweqwe', '2020-02-04', 'cr ml qweqwe'),
+(8, 3, 'Master', '1997-08-22', 'wfasdf');
 
 -- --------------------------------------------------------
 
@@ -107,6 +131,12 @@ INSERT INTO `login` (`id`, `username`, `password`) VALUES
 --
 
 --
+-- Indexes for table `certification`
+--
+ALTER TABLE `certification`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `educattain`
 --
 ALTER TABLE `educattain`
@@ -129,10 +159,16 @@ ALTER TABLE `login`
 --
 
 --
+-- AUTO_INCREMENT for table `certification`
+--
+ALTER TABLE `certification`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `educattain`
 --
 ALTER TABLE `educattain`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `employee`
