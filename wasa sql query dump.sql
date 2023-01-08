@@ -1,3 +1,10 @@
+alter table certification add empID int ;
+alter table certification add certName varchar(255);
+alter table certification add dateStart varchar(255);
+alter table certification add dateEnd varchar(255);
+alter table certification add qualification varchar(500);
+alter table certification add venue varchar(500);
+=============================================
 alter table educattain add empID varchar(255);
 alter table educattain add typeDegree varchar(255);
 alter table educattain add dateFinished varchar(255);

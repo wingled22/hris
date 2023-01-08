@@ -134,6 +134,53 @@
                   <hr>
                   <a href="employee-certification-add-form.php?id=<?php echo $empID;?>&idnum=<?php echo $idNum;?>" class="btn btn-primary">Add Certification</a>
                   <br>
+
+                  <table class="table table-striped table-valign-middle">
+                      <thead>
+
+                        <tr>
+                          <th>Certificate name</th>
+                          <th>Qualification</th>
+                          <th>Venue</th>
+                          <th>Date start</th>
+                          <th>Date finished</th>
+                          <th>More</th>
+                        </tr>
+
+                      </thead>
+
+                      <tbody>
+
+                      <?php
+                          require "dbconnection.php";
+                          $sql = "SELECT * from certification where empID = $empID";
+                          $res = $conn->query($sql);
+
+                          if(!$res)
+                              echo "no data on the the book table";
+
+
+                          while($row =mysqli_fetch_object($res)){
+                      ?>
+
+                        <tr>
+                          <td><?php echo $row->certName; ?></td>
+                          <td><?php echo $row->qualification ?></td>
+                          <td><?php echo $row->venue ?></td>
+                          <td><?php echo $row->dateStart ?></td>
+                          <td><?php echo $row->dateEnd; ?></td>
+                          <td>
+                            <a href="employee-certification-update-form.php?empid=<?php echo $_GET['id']?>&id=<?php echo $row->id?>" class="btn btn-success">Update</a>
+                            <a href="employee-certification-delete.php?empid=<?php echo $_GET['id']?>&id=<?php echo $row->id?>" class="btn btn-danger">Delete</a>
+                          </td>
+                        </tr>
+                    
+                      <?php
+                          }    
+                      ?>
+                      </tbody>
+                    </table>
+
               </div>
             </div>
 
