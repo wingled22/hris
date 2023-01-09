@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 08, 2023 at 04:34 PM
--- Server version: 10.4.18-MariaDB
--- PHP Version: 7.3.27
+-- Generation Time: Jan 09, 2023 at 08:31 AM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,29 @@ SET time_zone = "+00:00";
 --
 -- Database: `wasa`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `applicationinfo`
+--
+
+CREATE TABLE `applicationinfo` (
+  `id` int(11) NOT NULL,
+  `empID` int(11) DEFAULT NULL,
+  `examination` varchar(255) DEFAULT 'NULL',
+  `demo` varchar(255) DEFAULT '',
+  `contractSigning` varchar(255) DEFAULT 'NULL',
+  `startDate` varchar(255) DEFAULT 'NULL'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `applicationinfo`
+--
+
+INSERT INTO `applicationinfo` (`id`, `empID`, `examination`, `demo`, `contractSigning`, `startDate`) VALUES
+(1, 8, NULL, NULL, NULL, '2023-01-09'),
+(2, 9, '', '', 'Passed', '2023-01-01');
 
 -- --------------------------------------------------------
 
@@ -95,17 +118,21 @@ CREATE TABLE `employee` (
   `emername` varchar(255) DEFAULT NULL,
   `emercontact` varchar(255) DEFAULT NULL,
   `emerrelation` varchar(255) DEFAULT NULL,
-  `emeraddress` varchar(255) DEFAULT NULL
+  `emeraddress` varchar(255) DEFAULT NULL,
+  `status` varchar(100) NOT NULL DEFAULT 'active'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `employee`
 --
 
-INSERT INTO `employee` (`id`, `firstname`, `middlename`, `lastname`, `age`, `gender`, `civilstat`, `citizenship`, `religion`, `contact`, `email`, `address`, `birthplace`, `birthdate`, `fathername`, `mothername`, `idnum`, `hireddate`, `department`, `emername`, `emercontact`, `emerrelation`, `emeraddress`) VALUES
-(1, 'Wen', 'asdf ', '123', '24', 'Male', '11', '11', '11', 'qwe', 'qw@gmail.com', 'Proper', 'qwe', '2023-01-18', 'qwe', 'qwe', 'qweqwe', '2023-01-19', '12312weqwe', '2023-01-06', '213qwe', 'qweqweqwe', 'qweqweqwe'),
-(2, 'Windel', 'Abuyot', 'Pela', '24', 'Male', 'qwe', 'qwe', 'qwe', 'qwe', 'pelayowindel@gmail.com', 'Brgy. Libertad Proper, Purok Portland, Libertad Proper', 'qwe', '2023-01-18', 'qwe', 'qwe', 'qweqwe', '2023-01-19', '12312weqwe', '2023-01-06', '213qwe', 'qweqweqwe', 'qweqweqwe'),
-(3, 'Windel', 'Abuyot', 'Pela', '24', 'Male', 'qwe', 'qwe', 'qwe', 'qwe', 'pelayowindel@gmail.com', 'Brgy. Libertad Proper, Purok Portland, Libertad Proper', 'qwe', '2023-01-18', 'qwe', 'qwe', '123e3123', '2023-01-19', 'College instructor', '2023-01-06', '213qwe', 'qweqweqwe', 'qweqweqwe');
+INSERT INTO `employee` (`id`, `firstname`, `middlename`, `lastname`, `age`, `gender`, `civilstat`, `citizenship`, `religion`, `contact`, `email`, `address`, `birthplace`, `birthdate`, `fathername`, `mothername`, `idnum`, `hireddate`, `department`, `emername`, `emercontact`, `emerrelation`, `emeraddress`, `status`) VALUES
+(1, 'Wen', 'asdf ', '123', '24', 'Female', '11', '11', '11', 'qwe', 'qw@gmail.com', 'Proper', 'qwe', '2023-01-18', 'qwe', 'qwe', 'qweqwe', '2023-01-19', '12312weqwe', '2023-01-06', '213qwe', 'qweqweqwe', 'qweqweqwe', 'active'),
+(2, 'Windel', 'Abuyot', 'Pela', '24', 'Male', 'Widowed', 'qwe', 'qwe', 'qwe', 'pelayowindel@gmail.com', 'Brgy. Libertad Proper, Purok Portland, Libertad Proper', 'qwe', '2023-01-18', 'qwe', 'qwe', 'qweqwe', '2023-01-19', '12312weqwe', '2023-01-06', '213qwe', 'qweqweqwe', 'qweqweqwe', 'active'),
+(3, 'Windel', 'Abuyot', 'Pela', '24', 'Male', 'qwe', 'qwe', 'qwe', 'qwe', 'pelayowindel@gmail.com', 'sdf sdf', 'qwe', '2023-01-18', 'qwe', 'qwe', '123e3123', '2023-01-19', 'College instructor', '2023-01-06', '213qwe', 'qweqweqwe', 'qweqweqwe', 'active'),
+(5, 'af', 'am', 'al', '25', 'Female', 'Married', 'Filipino', 'None', '123', 'email@email.com', 'la pax', 'siocon', '1991-10-10', 'ap name', 'am name', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'applicant'),
+(8, 'sample', 'sample', 'sample', '24', 'Female', 'Married', 'Filipino', 'None', 'sample', 'sample@email.com', 'sample', 'sample', '2023-01-01', 'sample father', 'sample mother', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'applicant'),
+(9, 'sample 2', 'sample 2', 'sample 2', '34', 'Male', 'Married', 'qwe', 'None', 'qwe', 'test@gmail.com', 'asdfsad', 'qwe', '2023-01-09', 'sample father', 'sample mother', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'active');
 
 -- --------------------------------------------------------
 
@@ -152,6 +179,12 @@ INSERT INTO `offense` (`id`, `empID`, `offenseType`, `descr`, `sanction`) VALUES
 --
 
 --
+-- Indexes for table `applicationinfo`
+--
+ALTER TABLE `applicationinfo`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `certification`
 --
 ALTER TABLE `certification`
@@ -186,6 +219,12 @@ ALTER TABLE `offense`
 --
 
 --
+-- AUTO_INCREMENT for table `applicationinfo`
+--
+ALTER TABLE `applicationinfo`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `certification`
 --
 ALTER TABLE `certification`
@@ -201,7 +240,7 @@ ALTER TABLE `educattain`
 -- AUTO_INCREMENT for table `employee`
 --
 ALTER TABLE `employee`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `login`
