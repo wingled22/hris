@@ -1,3 +1,13 @@
+SELECT `emp`.`firstname`, `appinf`.*
+FROM `employee` AS `emp`
+	, `applicationinfo` AS `appinf`;
+
+alter table applicationinfo add empID int ;
+alter table applicationinfo add examination varchar(255);
+alter table applicationinfo add demo varchar(255);
+alter table applicationinfo add contractSigning varchar(255);
+alter table applicationinfo add startDate varchar(255);
+==========================================================
 alter table offense add empID int ;
 alter table offense add offenseType varchar(255);
 alter table offense add descr varchar(255);

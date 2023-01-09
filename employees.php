@@ -2,36 +2,7 @@
     include_once "~/../php-includes/header.php";
 ?>
 
-<script>
-  var data = [
-    {
-        "name":       "Tiger Nixon",
-        "position":   "System Architect",
-        "salary":     "$3,120",
-        "start_date": "2011/04/25",
-        "office":     "Edinburgh",
-        "extn":       "5421"
-    },
-    {
-        "name":       "Garrett Winters",
-        "position":   "Director",
-        "salary":     "$5,300",
-        "start_date": "2011/07/25",
-        "office":     "Edinburgh",
-        "extn":       "8422"
-    }
-];
 
-$('#sample').DataTable( {
-    data: data,
-    columns: [
-        { data: 'name' },
-        { data: 'position' },
-        { data: 'salary' },
-        { data: 'office' }
-    ]
-} );
-</script>
            
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper" style="min-height: 879.062px;">
@@ -89,7 +60,7 @@ $('#sample').DataTable( {
 
                     <?php
                         require "dbconnection.php";
-                        $sql = "SELECT * from employee";
+                        $sql = "SELECT * from employee where status='active' or status='inactive'";
                         $res = $conn->query($sql);
 
                         if(!$res)

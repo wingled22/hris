@@ -85,14 +85,12 @@
                       <div class="col-6">
                         <div class="form-group">
                            <select class="form-control" name="gender" value="<?php echo $row['gender']?>" required>
-                            <option value="Male" >Male</option>
-                            <option value="Female" >Female</option>
+                            <option value="Male" <?php if($row['gender'] == "Male"){ echo "selected";} ?> >Male</option>
+                            <option value="Female" <?php if($row['gender'] == "Female"){ echo "selected";}?> >Female</option>
                           </select>
                         </div>
                        
                       </div>
-                    
-                     
                     
                     </div>
 
@@ -101,11 +99,16 @@
                     <div class="row">
                       <div class="col-4">
                         <div class="form-group">
-                          <!-- <label for="exampleInputEmail1">First Name</label> -->
-                          <input type="text" class="form-control" id="" placeholder="Civil Status" name="civilstat" value="<?php echo $row['civilstat']?>" required>
+                            <select class="form-control" name="civilstat" value="<?php echo $row['gender']?>" required>
+                                <option value="Single" <?php if($row['civilstat'] == "Single"){ echo "selected";} ?> >Single</option>
+                                <option value="Married" <?php if($row['civilstat'] == "Married"){ echo "selected";} ?> >Married</option>
+                                <option value="Separated" <?php if($row['civilstat'] == "Separated"){ echo "selected";} ?> >Separated</option>
+                                <option value="Divorced" <?php if($row['civilstat'] == "Divorced"){ echo "selected";} ?> >Divorced</option>
+                                <option value="Widowed" <?php if($row['civilstat'] == "Widowed"){ echo "selected";}?> >Widowed</option>
+                            </select>
                         </div>
+                    
                       </div>
-
                       <div class="col-4">
                         <div class="form-group">
                           <!-- <label for="exampleInputEmail1">First Name</label> -->
