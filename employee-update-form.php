@@ -222,7 +222,7 @@
                       <div class="col-6">
                         <div class="form-group">
                           <!-- <label for="exampleInputEmail1">First Name</label> -->
-                          <input type="date" class="form-control" id="" placeholder="Name" name="emername" value="<?php echo $row['emername']?>" required>
+                          <input type="text" class="form-control" id="" placeholder="Name" name="emername" value="<?php echo $row['emername']?>" required>
                         </div>
                       </div>
 
@@ -259,7 +259,8 @@
 
                   <div class="card-footer">
                     <button type="submit" class="btn btn-primary">Submit</button>
-                    <button type="cancel" class="btn btn-danger">Back</button>
+                    <!-- <button type="cancel" class="btn btn-danger">Back</button> -->
+                    <a href="employee-profile.php?id=<?php echo $_GET['id'];?>" class="btn btn-danger">Back</a>
                   </div>
                 </form>
               </div>

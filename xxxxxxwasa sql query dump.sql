@@ -1,3 +1,11 @@
+alter table admin add username varchar(255) ;
+alter table admin add pass varchar(255);
+==========================================================
+alter table salaryStructure add degreeDept varchar(255) ;
+alter table salaryStructure add residency int;
+alter table salaryStructure add license varchar(255);
+alter table salaryStructure add salary int;
+===========================================================
 SELECT `emp`.`firstname`, `appinf`.*
 FROM `employee` AS `emp`
 	, `applicationinfo` AS `appinf`;

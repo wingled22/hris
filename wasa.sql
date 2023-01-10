@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 09, 2023 at 08:31 AM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- Generation Time: Jan 10, 2023 at 04:52 PM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 7.3.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,25 @@ SET time_zone = "+00:00";
 --
 -- Database: `wasa`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  `pass` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `username`, `pass`) VALUES
+(1, 'admin', 'admin');
 
 -- --------------------------------------------------------
 
@@ -41,8 +60,9 @@ CREATE TABLE `applicationinfo` (
 --
 
 INSERT INTO `applicationinfo` (`id`, `empID`, `examination`, `demo`, `contractSigning`, `startDate`) VALUES
-(1, 8, NULL, NULL, NULL, '2023-01-09'),
-(2, 9, '', '', 'Passed', '2023-01-01');
+(1, 8, '', '', '', '2023-01-09'),
+(2, 9, '', '', 'Passed', '2023-01-01'),
+(3, 10, 'Passed', 'Passed', 'Passed', '2023-01-11');
 
 -- --------------------------------------------------------
 
@@ -132,7 +152,8 @@ INSERT INTO `employee` (`id`, `firstname`, `middlename`, `lastname`, `age`, `gen
 (3, 'Windel', 'Abuyot', 'Pela', '24', 'Male', 'qwe', 'qwe', 'qwe', 'qwe', 'pelayowindel@gmail.com', 'sdf sdf', 'qwe', '2023-01-18', 'qwe', 'qwe', '123e3123', '2023-01-19', 'College instructor', '2023-01-06', '213qwe', 'qweqweqwe', 'qweqweqwe', 'active'),
 (5, 'af', 'am', 'al', '25', 'Female', 'Married', 'Filipino', 'None', '123', 'email@email.com', 'la pax', 'siocon', '1991-10-10', 'ap name', 'am name', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'applicant'),
 (8, 'sample', 'sample', 'sample', '24', 'Female', 'Married', 'Filipino', 'None', 'sample', 'sample@email.com', 'sample', 'sample', '2023-01-01', 'sample father', 'sample mother', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'applicant'),
-(9, 'sample 2', 'sample 2', 'sample 2', '34', 'Male', 'Married', 'qwe', 'None', 'qwe', 'test@gmail.com', 'asdfsad', 'qwe', '2023-01-09', 'sample father', 'sample mother', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'active');
+(9, 'sample 2', 'sample 2', 'sample 2', '34', 'Male', 'Married', 'qwe', 'None', 'qwe', 'test@gmail.com', 'asdfsad', 'qwe', '2023-01-09', 'sample father', 'sample mother', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'active'),
+(10, 'james', 'j', 'sss', '12', 'Male', 'Single', 'sdfesdf', 'sdfewdf', '213', 'test@email.com', 'dfsd', 'sdfsdf', '2023-10-31', '32234', '234234', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'active');
 
 -- --------------------------------------------------------
 
@@ -174,9 +195,37 @@ CREATE TABLE `offense` (
 INSERT INTO `offense` (`id`, `empID`, `offenseType`, `descr`, `sanction`) VALUES
 (2, 3, 'AWOL', 'absence without leave', '1 month suspension');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `salarystructure`
+--
+
+CREATE TABLE `salarystructure` (
+  `id` int(11) NOT NULL,
+  `category` varchar(255) DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
+  `residency` int(11) DEFAULT NULL,
+  `license` varchar(255) DEFAULT NULL,
+  `salary` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `salarystructure`
+--
+
+INSERT INTO `salarystructure` (`id`, `category`, `name`, `residency`, `license`, `salary`) VALUES
+(2, 'Masteral', 'with license qqq', 0, 'Without License', 3500111);
+
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `applicationinfo`
@@ -215,14 +264,26 @@ ALTER TABLE `offense`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `salarystructure`
+--
+ALTER TABLE `salarystructure`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `applicationinfo`
 --
 ALTER TABLE `applicationinfo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `certification`
@@ -240,7 +301,7 @@ ALTER TABLE `educattain`
 -- AUTO_INCREMENT for table `employee`
 --
 ALTER TABLE `employee`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `login`
@@ -252,6 +313,12 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `offense`
 --
 ALTER TABLE `offense`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `salarystructure`
+--
+ALTER TABLE `salarystructure`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
